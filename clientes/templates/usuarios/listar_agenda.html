@@ -1,0 +1,23 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+<h1>Lista Consultas Disponiveis</h1>
+    <table class="table">
+    {% for agenda in agendas %}
+        <tr>
+            <td>
+                <p><strong>Agenda: {{agenda.id}}</strong></p>
+                Nome: {{agenda.medico}}<br>
+                Especialidade: {{agenda.medico.especialidade}}<br>
+                Disponível no dia: {{agenda.data}}<br>
+            </td>
+                <td>
+                    <a class="btn btn-default" href="{% url 'detalhar_agenda' id=agenda.id %}">
+                        <button type="button" class="btn btn-primary">Detalhar</button>
+                    </a>
+                </td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

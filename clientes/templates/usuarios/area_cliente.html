@@ -1,0 +1,37 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <td>
+                <h2>Paciente: {{ cliente.nome }}</h2>
+                CPF: {{ cliente.cpf }}<br/>
+                Telefone: {{ cliente.telefone }}<br/>
+                Email: {{cliente.email}}<br>
+                <hr>
+                <h3>Cosultas:</h3>
+                {% for consultas in cliente.consulta.all %}
+                    Médico: {{ consultas.medico }}<br/>
+                    Data: {{ consultas.data }}<br/>
+                    {% for horas in consultas.horarios.all %}
+                    Horarios Disponiveis: {{horas }}<br/>
+                    {% endfor %}
+                    <br>
+                {% endfor %}
+            </td>
+            <td>
+                <a href="{% url 'listar_agenda' %}">
+                    <button type="button" class="btn btn-primary">Listar agendas médicas</button>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="{% url 'logout_usuario' %}">
+                    <button type="button" class="btn btn-danger">SAIR</button>
+                </a>
+            </td>
+        </tr>
+    </table>
+
+{% endblock %}
