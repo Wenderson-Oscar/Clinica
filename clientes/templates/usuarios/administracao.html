@@ -1,0 +1,20 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated and user.is_superuser%}
+        <br>
+        <h2>ADMINISTRAÇÃO</h2>
+            <strong>Administrador: </strong>{{ adm.username }}<br>
+        <table class="table">
+                <td>
+                    <a href="administrador/">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">admin Rest</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    {% else %}
+        <h2>Você nao possui permissão para acessar essa página!</h2>
+    {% endif %}
+
+{% endblock %}

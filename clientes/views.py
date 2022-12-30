@@ -29,6 +29,25 @@ def area_do_cliente(request,id):
 
 # Cadastro / Autenticação / Login #
 
+def login_adm(request):
+    return render(request, 'usuarios/login_adm.html', {})
+
+def administracao(request, id):
+    adm = get_object_or_404(User, id=id)
+    return render(request, 'usuarios/administracao.html',{'adm': adm})
+
+def autenticar_administrador(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(request, username=username, password=password)
+    if user is not None and user.is_superuser:
+        login(request, user)
+        id = user.id
+        adm = get_object_or_404(User, pk=id)
+        return render(request, 'usuarios/administracao.html',{'adm':adm})
+    else:
+        return render(request, 'usuarios/login_adm.html',{})
+
 def create_user(request):
     if request.method == 'POST':
         form = UserCreateForm(request.POST)
@@ -56,17 +75,6 @@ def cadastrar_cliente(request):
         form = ClientesForm()
     return render(request, 'usuarios/cadastrar_cliente.html', {'form':form})
 
-""" def autenticar_usuario(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        cliente = Clientes.objects.all()
-        return render(request, 'usuarios/home.html', {'clientes':cliente})
-    else:
-        return render(request, 'usuarios/page_login.html',{})
- """
 def autenticar_usuario(request):
     username = request.POST['username']
     password = request.POST['password']

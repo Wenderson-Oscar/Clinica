@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from medico.models import Medico, Especialidade, Horarios, Agenda
-from datetime import date
 
 class MedicoSerializers(serializers.HyperlinkedModelSerializer):
 
@@ -28,4 +27,3 @@ class AgendaSerializers(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Agenda
         fields = '__all__'
-    

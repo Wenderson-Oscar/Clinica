@@ -1,11 +1,6 @@
 {% extends 'usuarios/base.html' %}
 
 {% block content %}
-{% if user.is_authenticated %}
-    <h3>Hello my friend {{user.username}}</h3>
-{% else %}
-    <p>Você precisa realiar o login</p>
-{% endif %}
 <main>
     <!DOCTYPE html>
     <html lang="pt-BR">
@@ -21,11 +16,6 @@
         <div class="col-md-5 order-md-1">
             <a class="navbar-brand" href="{% url 'create_user' %}">
                 <button> Cadastrar</button>
-            </a>            
-        </div>
-        <div class="col-md-5 order-md-1">
-            <a class="navbar-brand" href="{% url 'listar_agenda' %}">
-                <button> Listar Agendas </button>
             </a>            
         </div>
     </body>
