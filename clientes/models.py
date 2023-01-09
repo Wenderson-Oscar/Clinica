@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Clientes(models.Model):
 
     SEXO_CHOICES = (
-        ('M', 'Maculino'),
+        ('M', 'Masculino'),
         ('F', 'Femenino')
     )
 

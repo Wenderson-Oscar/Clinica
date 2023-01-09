@@ -7,11 +7,7 @@ from datetime import date
 
 class Especialidade(models.Model):
 
-    def validate_name_esp(value: str):
-        if not value.isalpha():
-            raise ValidationError('Não pode incluir números neste campo.')
-
-    nome_especialidade = models.CharField(max_length=100, blank=False, validators=[validate_name_esp])
+    nome_especialidade = models.CharField(max_length=100, blank=False)
 
     def __str__(self):
         return self.nome_especialidade
@@ -24,11 +20,7 @@ class Medico(models.Model):
             raise ValidationError(_('(%(value)s, número errado, deve ter no minimo 11 digitos. '),
             params={'value': value})
 
-    def validate_name(value: str):
-        if not value.isalpha():
-            raise ValidationError('Não pode incluir números neste campo.')
-
-    nome = models.CharField(max_length=200, blank=False, null=False, validators=[validate_name])
+    nome = models.CharField(max_length=200, blank=False, null=False)
     crm = models.CharField(max_length=30, unique=True ,blank=False, null=False)
     email = models.EmailField()
     telefone = models.CharField(max_length=17, validators=[validate_phone])
