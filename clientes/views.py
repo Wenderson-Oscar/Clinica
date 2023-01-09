@@ -45,8 +45,10 @@ def autenticar_administrador(request):
         id = user.id
         adm = get_object_or_404(User, pk=id)
         return render(request, 'usuarios/administracao.html',{'adm':adm})
+    elif user is not None:
+        return autenticar_usuario(request)
     else:
-        return render(request, 'usuarios/login_adm.html',{})
+        return render(request, 'usuarios/home.html',{})
 
 def create_user(request):
     if request.method == 'POST':
@@ -85,7 +87,7 @@ def autenticar_usuario(request):
         cliente = get_object_or_404(Clientes, pk=id)
         return render(request, 'usuarios/area_cliente.html', {'cliente': cliente})
     else:
-        return render(request, 'usuarios/page_login.html')
+        return render(request, 'usuarios/home.html')
  
 def logout_usuario(request):
     logout(request)
