@@ -9,7 +9,7 @@
                 Telefone: {{ cliente.telefone }}<br/>
                 Email: {{cliente.email}}<br>
                 <hr>
-                <h3>Cosultas:</h3>
+                <h3>Consultas Marcadas:</h3>
                 {% for consultas in cliente.consulta.all %}
                     Médico: {{ consultas.medico }}<br/>
                     Data: {{ consultas.data }}<br/>

@@ -1,7 +1,7 @@
 {% extends 'usuarios/base.html' %}
 
 {% block content %}
-<h1>Lista Consultas Disponiveis</h1>
+<h1>Consultas Disponiveis</h1>
     <table class="table">
     {% for agenda in agendas %}
         <tr>
@@ -12,6 +12,7 @@
                 Disponível no dia: {{agenda.data}}<br>
             </td>
                 <td>
+                    <br>
                     <a class="btn btn-default" href="{% url 'detalhar_agenda' id=agenda.id %}">
                         <button type="button" class="btn btn-primary">Detalhar</button>
                     </a>

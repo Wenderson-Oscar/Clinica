@@ -9,11 +9,9 @@ urlpatterns = [
     path('detalhar_agenda/<int:id>/', views.detalhar_agenda, name='detalhar_agenda'),
     path('marcar_consulta/<int:id>/<int:pk>/', views.marcar_consulta, name='marcar_consulta'),
     path('area_cliente/<int:id>/',views.area_do_cliente, name= 'area_cliente'),
-    path('login_adm',views.login_adm, name='login_adm'),
     path('autenticar_administrador', views.autenticar_administrador,name='autenticar_administrador'),
     path('administracao/<int:id>/',views.administracao, name='administracao'),
     path('logout_usuario', views.logout_usuario, name='logout_usuario'),
-    path('page_login', views.page_login, name='page_login'),
     path('autenticar_usuario', views.autenticar_usuario, name='autenticar_usuario'),
 
 ]

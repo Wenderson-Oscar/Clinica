@@ -12,8 +12,10 @@
     </head>
     <body>
         <br>
+        {% if user.is_authenticated or user.is_superuser %}
+        {% else %}
         <center><h1>Faça Seu Cadastro</h1></center>
-        <div class="col-md-5 order-md-1">
+        <center><div class="col-md-5 order-md-1">
             <form action="{% url 'autenticar_administrador'%}" method="post">
                 {% csrf_token %}
                     <div class="mb-3" >
@@ -25,13 +27,16 @@
                         <input name="password" type="password" class="form-control" id="exampleInputPassword1">
                     </div>
                 <button type="submit" class="btn btn-primary">Login</button>
-                </form>
+            </form>
         </div>
-        <div class="col-md-5 order-md-1">
+        <br>
+        <div>
             <a href="{% url 'create_user' %}">
-                <button type="submit" class="btn btn-primary"> Cadastrar</button>
+               Cadastro
             </a>            
         </div>
+        </center>
+        {% endif %}
     </body>
     </html>
 </main>

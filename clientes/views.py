@@ -29,9 +29,6 @@ def area_do_cliente(request,id):
 
 # Cadastro / Autenticação / Login #
 
-def login_adm(request):
-    return render(request, 'usuarios/login_adm.html', {})
-
 def administracao(request, id):
     adm = get_object_or_404(User, id=id)
     return render(request, 'usuarios/administracao.html',{'adm': adm})
@@ -92,6 +89,3 @@ def autenticar_usuario(request):
 def logout_usuario(request):
     logout(request)
     return render(request, 'usuarios/home.html',{})
-
-def page_login(request):
-    return render(request, 'usuarios/page_login.html',{})
