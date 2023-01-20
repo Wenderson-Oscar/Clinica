@@ -1,10 +1,10 @@
 # Sistema Clínico utilizando Rest
 
-<img src="pacote_readme/" alt="exemplo imagem">
+<img src="pacote_readme/img2.png" alt="exemplo imagem">
 
 >Prototipo para marcar consultas e adicionar médicos e seus horarios e agendas, na área de adm foi usado uma **api** para gerenciar os médicos.
 
-* [Demostração em Vídeo]()
+* [Demostração em Vídeo](https://drive.google.com/file/d/1wpmfCAra2aeh2NxdBCL7XXLxXPq-mWSc/view?usp=share_link)
 
 🏫 Atividade acâdemica
 
