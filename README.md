@@ -52,7 +52,7 @@ Ativando o ambiente virtual
 Windows:
 
 ```
-menv\Scripts\activate
+env\Scripts\activate
 ```
 
 Linux:
