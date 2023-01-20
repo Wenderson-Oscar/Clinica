@@ -19,12 +19,12 @@ def detalhar_agenda(request, id):
 
 def marcar_consulta(request, id, pk):
     agenda = get_object_or_404(Agenda, pk=id)
-    cliente = get_object_or_404(Clientes, pk=pk)
+    cliente = get_object_or_404(Clientes, user__id=request.user.id)
     cliente.consulta.add(agenda)
     return render(request, 'usuarios/area_cliente.html', {'cliente': cliente})
 
-def area_do_cliente(request,id):
-    cliente = get_object_or_404(Clientes, id=id)
+def area_do_cliente(request, id):
+    cliente = get_object_or_404(Clientes, user__id=request.user.id)
     return render(request, 'usuarios/area_cliente.html',{'cliente':cliente})
 
 # Cadastro / Autenticação / Login #
