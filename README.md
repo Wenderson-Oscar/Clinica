@@ -1,83 +1,48 @@
 # Sistema Clínico utilizando Rest
 
+<img src="pacote_readme/" alt="exemplo imagem">
+
+>Prototipo para marcar consultas e adicionar médicos e seus horarios e agendas, na área de adm foi usado uma **api** para gerenciar os médicos.
+
+* [Demostração em Vídeo]()
+
 🏫 Atividade acâdemica
-
-Descrição: prototipo para marcar consultas e adicionar médicos e seus horarios e agendas; na área de adm foi usado uma **api** para melhor gerenciar os médicos.
-<hr>
-
-Menu
-=================
-<!--ts-->
-   * [Tecnologias Utilizadas](#tecnologias-utilizadas)
-   * [Como Instalar](#como-instalar)
-<!--te-->
 
 ## Tecnologias Utilizadas
 
-🧰 Visual Code
+<img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white">
+<img src="https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray">
+<img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white">
 
-🔨 Python
+## 🚀 Processo de Instalação
 
-📚 Django
+Para instalar **Clínica**, siga estas etapas:
 
-📖 Rest_Framework
-
-## Como Instalar
-
-Iremos Clonar o repositorio
-
+Linux:
 ```
 git clone https://github.com/Wenderson-Oscar/Clinica.git
-```
-
-agora iremos baixar o ambiente virtual
-
-```
-pip install virtualenv
-```
-caso ja tenha instalado iremos criar o ambiente virtual
-
-Windows:
-
-```
-python -m venv env
-```
-Linux:
-
-```
 virtualenv env
+. env/bin/activate
+pip install -r requirementes.txt
 ```
-Ativando o ambiente virtual
 
 Windows:
-
 ```
+git clone https://github.com/Wenderson-Oscar/Clinica.git
+python -m venv env
 env\Scripts\activate
+pip install -r requirementes.txt
 ```
 
-Linux:
+## ☕ Como Utlizar a Aplicação
+
+Para usar **Clínica**, siga estas etapas:
 
 ```
-. env/bin/activate
-```
-Agora iremos baixar as dependencias 
-
-```
-pip install -r requirements.txt
-```
-
-Iremos baixar o banco
-
-```
+python manage.py migrate clientes
+python manage.py migrate medico
 python manage.py migrate
-```
-Agora iremos criar o super usuarios
-
-```
 python manage.py createsuperuser
-```
-depois de preencher as informações poderemos iniciar 
-
-```
 python manage.py runserver
 ```
