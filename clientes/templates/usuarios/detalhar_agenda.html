@@ -15,7 +15,7 @@
             {% if user.is_authenticated %}
                 <td>
                     <a href="{% url 'marcar_consulta' id=agenda.id pk=user.pk %}">
-                        <button type="button" class="btn btn-success">Marcar consulta</button>
+                        <button type="button" class="btn btn-primary" >Marcar consulta</button>
                     </a>
                 </td>
             {% endif %}
