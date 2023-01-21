@@ -30,7 +30,7 @@ def area_do_cliente(request, id):
 # Cadastro / Autenticação / Login #
 
 def administracao(request, id):
-    adm = get_object_or_404(User, id=id)
+    adm = get_object_or_404(User, user__id=request.user.id)
     return render(request, 'usuarios/administracao.html',{'adm': adm})
 
 def autenticar_administrador(request):
@@ -80,8 +80,8 @@ def autenticar_usuario(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        id = user.id
-        cliente = get_object_or_404(Clientes, pk=id)
+        #id = user.id
+        cliente = get_object_or_404(Clientes, user__id=request.user.id)
         return render(request, 'usuarios/area_cliente.html', {'cliente': cliente})
     else:
         return render(request, 'usuarios/home.html')
